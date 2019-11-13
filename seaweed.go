@@ -8,7 +8,6 @@ import (
 	"io"
 	"io/ioutil"
 	"net/url"
-	"path"
 	"strconv"
 	"strings"
 	"sync"
@@ -430,7 +429,7 @@ func (c *Seaweed) UploadFilePart(f *model.FilePart) (cm *model.ChunkManifest, fi
 		defer closer.Close()
 	}
 
-	baseName := path.Base(f.FileName)
+	baseName := f.FileName
 	if c.ChunkSize > 0 && f.FileSize > c.ChunkSize {
 		chunks := f.FileSize/c.ChunkSize + 1
 
