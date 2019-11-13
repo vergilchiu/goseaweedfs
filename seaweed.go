@@ -14,8 +14,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/linxGnu/goseaweedfs/libs"
-	"github.com/linxGnu/goseaweedfs/model"
+	"github.com/vergilchiu/goseaweedfs/libs"
+	"github.com/vergilchiu/goseaweedfs/model"
 
 	cache "github.com/patrickmn/go-cache"
 )
