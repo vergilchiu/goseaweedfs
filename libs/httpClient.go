@@ -12,7 +12,6 @@ import (
 	"net/textproto"
 	"net/url"
 	"path/filepath"
-	"regexp"
 	"strings"
 	"time"
 )
