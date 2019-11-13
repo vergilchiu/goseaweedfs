@@ -17,7 +17,6 @@ import (
 	"time"
 )
 
-var reg, _ = regexp.Compile("[^a-zA-Z0-9.-_]+")
 
 // MakeURL encode to full url request
 func MakeURL(scheme, host, path string, args url.Values) string {
@@ -198,7 +197,7 @@ func (c *HTTPClient) uploadContent(uploadURL string, fillBuffer func(w io.Writer
 	bodyWriter := multipart.NewWriter(body)
 
 	h := make(textproto.MIMEHeader)
-	h.Set("Content-Disposition", fmt.Sprintf(`form-data; name="file"; filename="%s"`, reg.ReplaceAllString(filename, "")))
+	h.Set("Content-Disposition", fmt.Sprintf(`form-data; name="file"; filename="%s"`, filename))
 	if mtype == "" {
 		mtype = mime.TypeByExtension(strings.ToLower(filepath.Ext(filename)))
 	}
